@@ -444,7 +444,7 @@ function CreatePage() {
               <div className="rounded-2xl border border-border/70 bg-card p-6">
                 <h2 className="font-display text-2xl">Order summary</h2>
                 <dl className="mt-4 space-y-2.5 text-sm">
-                  {[
+                  {([
                     ["Template", getTemplate(project.template).name],
                     [
                       "Couple",
@@ -455,7 +455,7 @@ function CreatePage() {
                     ["Photos", `${project.photos.length} uploaded`],
                     ["Music", getTrack(project.music).name],
                     ["Package", pkg.name],
-                  ].map(([k, v]) => (
+                  ] as [string, string][]).map(([k, v]) => (
                     <div key={k} className="flex justify-between gap-4 border-b border-border/40 pb-2">
                       <dt className="text-muted-foreground">{k}</dt>
                       <dd className="text-right">{v}</dd>

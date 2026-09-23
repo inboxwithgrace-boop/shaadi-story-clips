@@ -67,13 +67,13 @@ function OrderPage() {
       </p>
 
       <dl className="mt-8 space-y-3 rounded-2xl border border-border/70 bg-card p-6 text-sm">
-        {[
+        {([
           ["Order ID", project.orderId ?? "—"],
           ["Couple names", `${project.brideName} & ${project.groomName}`],
           ["Template", getTemplate(project.template).name],
           ["Package", `${pkg.name} · ₹${pkg.price}`],
           ["Status", project.orderStatus],
-        ].map(([k, v]) => (
+        ] as [string, string][]).map(([k, v]) => (
           <div key={k} className="flex justify-between gap-4 border-b border-border/40 pb-2 last:border-0">
             <dt className="text-muted-foreground">{k}</dt>
             <dd className="text-right">{v}</dd>

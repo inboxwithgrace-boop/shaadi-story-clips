@@ -4,7 +4,7 @@ import { VideoPreview } from "@/components/wedding/VideoPreview";
 import { formatWeddingDate, formatWeddingTime, useProjects } from "@/lib/wedding/store";
 import { getTemplate } from "@/lib/wedding/templates";
 import { getTrack } from "@/lib/wedding/music";
-import { getPackage } from "@/lib/wedding/types";
+import { getPackage, type WeddingProject } from "@/lib/wedding/types";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/dashboard")({
 function Dashboard() {
   const projects = useProjects();
   const [activeId, setActiveId] = useState<string | null>(null);
-  const project = projects.find((p) => p.id === activeId) ?? projects[0];
+  const project = (projects.find((p) => p.id === activeId) ?? projects[0]) as WeddingProject;
   const pkg = getPackage(project.package);
   const ready = project.render.state === "ready" && project.render.videoUrl;
 
@@ -92,7 +92,7 @@ function Dashboard() {
           <section className="rounded-2xl border border-border/70 bg-card p-6">
             <h2 className="font-display text-2xl">Wedding details</h2>
             <dl className="mt-4 space-y-2.5 text-sm">
-              {[
+              {([
                 ["Couple", `${project.brideName} & ${project.groomName}`],
                 [
                   "Date",
@@ -104,7 +104,7 @@ function Dashboard() {
                 ["Bride's parents", project.brideParents || "—"],
                 ["Groom's parents", project.groomParents || "—"],
                 ["Music", getTrack(project.music).name],
-              ].map(([k, v]) => (
+              ] as [string, string][]).map(([k, v]) => (
                 <div key={k} className="flex justify-between gap-4 border-b border-border/40 pb-2 last:border-0">
                   <dt className="text-muted-foreground">{k}</dt>
                   <dd className="text-right">{v}</dd>

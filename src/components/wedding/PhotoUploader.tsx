@@ -37,7 +37,7 @@ export function PhotoSlot({
 }: {
   id: string;
   label: string;
-  photo?: WeddingPhoto;
+  photo?: WeddingPhoto | undefined;
   onChange: (photo: WeddingPhoto | null) => void;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);

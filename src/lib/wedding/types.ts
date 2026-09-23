@@ -104,5 +104,5 @@ export const PACKAGES: PackageDef[] = [
   },
 ];
 
-export const getPackage = (id: PackageId) =>
-  PACKAGES.find((p) => p.id === id) ?? PACKAGES[0];
+export const getPackage = (id: PackageId): PackageDef =>
+  PACKAGES.find((p) => p.id === id) ?? (PACKAGES[0] as PackageDef);

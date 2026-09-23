@@ -33,5 +33,5 @@ export const MUSIC_TRACKS: MusicTrack[] = [
   },
 ];
 
-export const getTrack = (id: string) =>
-  MUSIC_TRACKS.find((t) => t.id === id) ?? MUSIC_TRACKS[0];
+export const getTrack = (id: string): MusicTrack =>
+  MUSIC_TRACKS.find((t) => t.id === id) ?? (MUSIC_TRACKS[0] as MusicTrack);

@@ -118,5 +118,5 @@ export const TEMPLATES: VideoTemplate[] = [
   },
 ];
 
-export const getTemplate = (id: string) =>
-  TEMPLATES.find((t) => t.id === id) ?? TEMPLATES[0];
+export const getTemplate = (id: string): VideoTemplate =>
+  TEMPLATES.find((t) => t.id === id) ?? (TEMPLATES[0] as VideoTemplate);
