@@ -126,7 +126,7 @@ export function VideoPreview({
     return () => clearTimeout(t);
   }, [playing, index, scenes.length]);
 
-  const scene = scenes[Math.min(index, scenes.length - 1)];
+  const scene = scenes[Math.min(index, scenes.length - 1)] as Scene;
 
   return (
     <div className={cn("w-full", className)}>

@@ -5,11 +5,11 @@ export interface Scene {
   key: string;
   label: string;
   kind: "title" | "names" | "text" | "photo" | "detail" | "closing";
-  eyebrow?: string;
-  headline?: string;
-  sub?: string;
-  body?: string;
-  photo?: string;
+  eyebrow?: string | undefined;
+  headline?: string | undefined;
+  sub?: string | undefined;
+  body?: string | undefined;
+  photo?: string | undefined;
 }
 
 /** Scene 1 — 11 structure, always derived from the customer's own data. */

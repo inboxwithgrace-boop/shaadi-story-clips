@@ -171,9 +171,9 @@ export function formatWeddingDate(value?: string) {
 
 export function formatWeddingTime(value?: string) {
   if (!value) return "";
-  const [h, m] = value.split(":").map(Number);
+  const [h = NaN, m = 0] = value.split(":").map(Number);
   if (Number.isNaN(h)) return value;
   const suffix = h >= 12 ? "PM" : "AM";
   const hour = h % 12 === 0 ? 12 : h % 12;
-  return `${hour}:${String(m ?? 0).padStart(2, "0")} ${suffix}`;
+  return `${hour}:${String(m).padStart(2, "0")} ${suffix}`;
 }
