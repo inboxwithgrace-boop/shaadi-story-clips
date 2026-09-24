@@ -1,9 +1,9 @@
 import { useSyncExternalStore } from "react";
 import type { PackageId, OrderStatus, WeddingProject } from "./types";
-import royal from "@/assets/tpl-royal.jpg";
-import modern from "@/assets/tpl-modern.jpg";
-import floral from "@/assets/tpl-floral.jpg";
-import celebration from "@/assets/tpl-celebration.jpg";
+import royal from "@/assets/tpl-royal.png";
+import modern from "@/assets/tpl-modern.png";
+import floral from "@/assets/tpl-floral.png";
+import celebration from "@/assets/tpl-celebration.png";
 
 const KEY = "wedmotion.projects.v1";
 const DRAFT_KEY = "wedmotion.draft.v1";
